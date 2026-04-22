@@ -1,0 +1,83 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    background-color: #fff8f1;
+    color: #1e1b17;
+    font-family: 'Manrope', sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  * {
+    box-sizing: border-box;
+  }
+}
+
+@layer components {
+  .btn-primary {
+    @apply inline-flex items-center gap-2 px-6 py-3 rounded-xl font-jakarta font-semibold text-white text-sm transition-all duration-300;
+    background: linear-gradient(135deg, #672d00, #8b4000);
+  }
+
+  .btn-primary:hover {
+    @apply scale-105 shadow-ambient;
+    background: linear-gradient(135deg, #7a3500, #9e4a00);
+  }
+
+  .btn-secondary {
+    @apply inline-flex items-center gap-2 px-6 py-3 rounded-xl font-jakarta font-semibold text-primary text-sm border transition-all duration-300;
+    border-color: rgba(212, 195, 186, 0.4);
+  }
+
+  .btn-secondary:hover {
+    @apply scale-105 bg-surface-container-low;
+  }
+
+  .section-title {
+    @apply font-jakarta font-bold text-on-surface;
+    letter-spacing: -0.02em;
+  }
+
+  .chip {
+    @apply px-4 py-1.5 rounded-full text-sm font-manrope font-medium transition-all duration-200 cursor-pointer;
+  }
+
+  .chip-unselected {
+    @apply chip bg-surface-container-high text-on-surface-variant;
+  }
+
+  .chip-selected {
+    @apply chip bg-primary text-on-primary shadow-ambient;
+  }
+}
+
+/* Glassmorphism navbar */
+.glass-nav {
+  background: rgba(255, 248, 241, 0.85);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+}
+
+/* Menu card hover glow */
+.bestseller-glow {
+  box-shadow: 0 8px 24px rgba(30, 27, 23, 0.06), 0 0 32px 6px rgba(255, 219, 200, 0.18);
+}
+
+/* Scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #f9f3eb;
+}
+::-webkit-scrollbar-thumb {
+  background: #d4c3ba;
+  border-radius: 3px;
+}
